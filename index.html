@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bhoomani Holdings Pvt. Ltd. — Real-asset opportunities starting from ₹10,000 across multiple high-growth sectors.">
+<title>Bhoomani Holdings Pvt. Ltd.</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+  --navy:#071a2d;
+  --navy2:#0c2943;
+  --gold:#d7a33d;
+  --gold2:#f1c76a;
+  --cream:#f8f3e8;
+  --white:#fff;
+  --muted:#b9c4cf;
+  --line:rgba(215,163,61,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--navy);
+  color:#fff;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(5,19,33,.88);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition: all 0.3s ease;
+}
+.nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand strong{font-family:"Playfair Display";font-size:18px;letter-spacing:1px;display:block}
+.brand span{font-size:9px;color:var(--gold2);letter-spacing:2px}
+.links{display:flex;gap:24px;align-items:center;font-size:14px}
+.links a{color:#e7edf2;transition:color 0.2s}
+.links a:hover{color:var(--gold2)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:12px 22px;border-radius:5px;font-weight:700;font-size:14px;
+  transition:.25s;border:1px solid transparent;cursor:pointer
+}
+.btn-gold{background:var(--gold);color:#071a2d}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{border-color:var(--gold);color:var(--gold2)}
+.btn-outline:hover{background:rgba(215,163,61,.1)}
+.menu-toggle{display:none;font-size:28px;color:var(--gold);cursor:pointer}
+
+/* HERO */
+.hero{
+  min-height:760px;
+  padding-top:82px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background-image:
+    linear-gradient(90deg,rgba(4,18,31,.95) 0%,rgba(4,18,31,.82) 40%,rgba(4,18,31,.45) 75%,rgba(4,18,31,.65) 100%),
+    linear-gradient(0deg,rgba(4,18,31,.3),rgba(4,18,31,.1)),
+    url("hero.jfif");
+  background-size:cover;background-position:center;
+}
+.hero-content{
+  max-width:680px;
+  padding:75px 0;
+  margin-left:auto;
+  margin-right:0;
+  text-align:right;
+}
+.eyebrow{color:var(--gold2);letter-spacing:3px;font-size:13px;font-weight:700;margin-bottom:18px}
+h1{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(44px,5.5vw,72px);line-height:1.05;letter-spacing:-1px;
+  margin-bottom:24px;
+}
+h1 em{color:var(--gold2);font-style:normal}
+.hero p{font-size:18px;color:#e0e7ec;max-width:610px;margin-bottom:30px;margin-left:auto}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;justify-content:flex-end}
+.hero-note{font-size:12px;color:#c6d0d8;margin-top:20px}
+
+/* TRUST BAR */
+.trust{background:#061628;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{padding:22px 18px;border-right:1px solid rgba(255,255,255,.1)}
+.trust-item:last-child{border:0}
+.trust-item b{display:block;color:var(--gold2);font-size:15px}
+.trust-item span{font-size:12px;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:92px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 48px}
+.kicker{color:var(--gold);font-size:13px;letter-spacing:3px;font-weight:700}
+h2{font-family:"Playfair Display";font-size:clamp(32px,4vw,48px);line-height:1.15;margin:10px 0 14px}
+.section-head p{color:var(--muted)}
+
+/* ENTRY */
+.entry{
+  background:linear-gradient(135deg,#0d2d49,#071a2d);
+  border:1px solid var(--line);border-radius:18px;padding:42px;
+  display:grid;grid-template-columns:1fr 250px;gap:40px;align-items:center;
+}
+.entry h3{font-family:"Playfair Display";font-size:31px}
+.entry p{color:var(--muted);margin:12px 0 22px}
+.big-number{text-align:center;border-left:1px solid var(--line)}
+.big-number strong{display:block;font-size:60px;color:var(--gold2);line-height:1}
+.big-number span{color:#dbe3e9;font-size:14px}
+
+/* SECTORS SECTION */
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sector-card{
+  background:linear-gradient(180deg,#0c2943,#071a2d);
+  border:1px solid rgba(215,163,61,.2);
+  border-radius:14px;padding:30px 24px;
+  position:relative;overflow:hidden;
+  transition:all 0.3s ease;
+}
+.sector-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-5px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.sector-status{
+  position:absolute;top:18px;right:18px;
+  font-size:10px;font-weight:800;letter-spacing:1px;
+  padding:4px 10px;border-radius:12px;
+}
+.status-active{background:rgba(215,163,61,0.2);color:var(--gold2);border:1px solid var(--gold)}
+.status-expansion{background:rgba(255,255,255,0.08);color:var(--muted);border:1px solid rgba(255,255,255,0.15)}
+.sector-icon{font-size:32px;color:var(--gold2);margin-bottom:16px}
+.sector-card h3{font-family:"Playfair Display";font-size:22px;margin-bottom:10px;color:#fff}
+.sector-card p{color:var(--muted);font-size:13px;line-height:1.5}
+.sector-card:has(.kapil-badge) p{padding-right:58px}
+
+/* CARDS / OPPORTUNITIES */
+.opps{background:#f7f4ec;color:var(--navy)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{
+  border:1px solid #d8c9a8;border-radius:16px;overflow:hidden;background:#fff;
+  box-shadow:0 12px 35px rgba(3,18,31,.08);color:var(--navy)
+}
+.card-img{height:245px;background-size:cover;background-position:center;position:relative}
+.solar{background-image:linear-gradient(0deg,rgba(5,20,31,.75),transparent),url("solar.jpg")}
+.palm{background-image:linear-gradient(0deg,rgba(5,20,31,.72),transparent),url("palm.jfif");background-position:right center}
+.badge{position:absolute;top:18px;left:18px;background:var(--gold);padding:7px 12px;border-radius:20px;font-size:11px;font-weight:800;color:#071a2d}
+.partner-tag{
+  position:absolute;bottom:14px;right:18px;
+  background:rgba(7,26,45,0.88);color:var(--gold2);
+  padding:5px 12px;border-radius:4px;font-size:11px;font-weight:600;
+  backdrop-filter:blur(4px);border:1px solid var(--line);
+}
+.card-body{padding:27px}
+.card h3{font-family:"Playfair Display";font-size:29px;margin-bottom:7px}
+.card-body>p{color:#59636b;margin-bottom:18px}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
+.feature{border-top:1px solid #e5dfd2;padding-top:10px}
+.feature b{display:block;color:var(--navy);font-size:14px}
+.feature span{font-size:12px;color:#6e777e}
+.disclaimer{font-size:11px;color:#777;margin-top:15px}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why{
+  padding:28px 22px;border:1px solid rgba(215,163,61,.25);
+  background:linear-gradient(180deg,#0d2d49,#081e32);border-radius:12px
+}
+.icon{font-size:28px;color:var(--gold2);margin-bottom:15px}
+.why h3{font-size:18px;margin-bottom:8px}
+.why p{color:var(--muted);font-size:13px}
+
+/* PROCESS */
+.process{background:#f7f4ec;color:var(--navy)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{text-align:center;padding:28px 18px}
+.num{width:45px;height:45px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);margin:0 auto 15px;font-weight:800}
+.step h3{font-size:17px;margin-bottom:7px}
+.step p{font-size:13px;color:#69737a}
+
+/* CTA */
+.cta{
+  margin:0 auto 92px;width:min(1180px,92%);border:1px solid var(--line);border-radius:20px;
+  background:radial-gradient(circle at 80% 20%,rgba(215,163,61,.18),transparent 35%),#0c2943;
+  padding:60px;text-align:center
+}
+.cta p{color:var(--muted);max-width:650px;margin:0 auto 25px}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
+.contact-copy p{color:var(--muted);margin:12px 0 24px}
+.contact-details div{margin:13px 0}
+.contact-details b{display:block;color:var(--gold2);font-size:12px;letter-spacing:1px}
+.contact-details b .ci{width:15px;height:15px;margin-right:7px;vertical-align:-3px;color:var(--gold2)}
+.location-link{color:var(--muted);text-decoration:none;transition:color .2s ease}
+.location-link:hover{color:var(--gold);text-decoration:underline}
+.form{background:#0c2943;padding:28px;border-radius:14px;border:1px solid var(--line)}
+.form input,.form select,.form textarea{
+  width:100%;padding:14px 15px;margin-bottom:13px;background:#071a2d;
+  border:1px solid rgba(255,255,255,.12);border-radius:5px;color:#fff;font:inherit
+}
+.form textarea{min-height:120px;resize:vertical}
+.form small{display:block;color:#8e9ca7;font-size:10px;margin:-5px 0 13px}
+
+/* FOOTER */
+footer{background:#040f1c;border-top:1px solid rgba(255,255,255,.08);padding:38px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:25px}
+footer p{color:#7f8b95;font-size:12px}
+footer .brand{margin-bottom:10px}
+
+/* FLOATING WHATSAPP */
+.wa{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  background:#25D366;color:#fff;font-size:26px;box-shadow:0 10px 25px rgba(0,0,0,.3);
+  transition:transform 0.2s ease;
+}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:32px;height:32px;display:block}
+
+/* KAPIL LOGO ON SECTOR CARD */
+.sector-card{position:relative}
+.kapil-badge{
+  position:absolute;right:14px;bottom:14px;z-index:2;
+  width:50px;height:50px;border-radius:50%;overflow:hidden;
+  background:#fff;padding:5px;box-shadow:0 6px 16px rgba(0,0,0,.4);
+  border:2px solid rgba(255,255,255,.7);
+}
+.kapil-badge img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .links{
+    display:none;
+    position:absolute;top:82px;left:0;right:0;
+    background:#071a2d;flex-direction:column;
+    padding:20px;border-bottom:1px solid var(--line);
+  }
+  nav.mobile-open .links{display:flex}
+  .menu-toggle{display:block}
+  .hero{min-height:700px;background-position:55% center}
+  .hero-content{text-align:left;margin-left:0}
+  .hero p{margin-left:0}
+  .hero-actions{justify-content:flex-start}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .entry{grid-template-columns:1fr}.big-number{border-left:0;border-top:1px solid var(--line);padding-top:25px}
+  .sectors-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  .nav-inner{height:72px}.brand strong{font-size:15px}.brand span{font-size:8px}
+  .hero{padding-top:72px;min-height:720px;background-position:60% center}
+  .hero-content{padding:50px 0}.hero p{font-size:16px}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .trust-item{padding:17px 10px}
+  section{padding:65px 0}
+  .sectors-grid,.cards,.contact-grid{grid-template-columns:1fr}
+  .why-grid,.steps{grid-template-columns:1fr 1fr}
+  .entry{padding:28px}
+  .cta{padding:40px 22px}
+  .footer-grid{flex-direction:column}
+}
+@media(max-width:430px){
+  .why-grid,.steps{grid-template-columns:1fr}
+  h1{font-size:42px}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <img src="logo.png" alt="Bhoomani Holdings Logo" style="width:50px !important; height:50px !important; max-width:50px !important; max-height:50px !important; object-fit:contain !important; display:block !important;">
+      <div><strong>BHOOMANI HOLDINGS PRIVATE LIMITED</strong><span>COLLECTIVE GROWTH. SECURE FUTURE.</span></div>
+    </a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#investments">Investments</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">How It Works</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold" href="#contact">Register Interest</a>
+    </div>
+    <div class="menu-toggle">☰</div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">DIVERSIFIED REAL-ASSET PORTFOLIO</div>
+      <h1>Own Real Assets.<br><em>Starting From ₹10,000.</em></h1>
+      <p>
+        Discover thoughtfully structured real-asset opportunities designed
+        to make participation more accessible — expanding across solar energy,
+        agriculture, real estate, technology, and beyond.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#investments">Explore Opportunities →</a>
+        <a class="btn btn-outline" href="#contact">Register Your Interest</a>
+      </div>
+      <div class="hero-note">*Investment terms, eligibility, risks and applicable conditions apply.</div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item"><b>₹10K Entry Point</b><span>Accessible starting investment</span></div>
+    <div class="trust-item"><b>Real-Asset Focus</b><span>Tangible asset opportunities</span></div>
+    <div class="trust-item"><b>Strong Synergies</b><span>Strategic corporate partners</span></div>
+    <div class="trust-item"><b>Long-Term Vision</b><span>Built for multi-sector growth</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">OUR APPROACH</div>
+      <h2>Invest Small. Own Real Assets. Grow With Us.</h2>
+      <p>
+        Bhoomani Holdings Pvt. Ltd. is building a multi-sector real-asset platform that
+        connects investors with carefully structured, high-value opportunities across
+        renewable energy, agriculture, real estate, education, technology, hospitality, and direct investments.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div>
+        <h3>Property participation within reach.</h3>
+        <p>
+          Our goal is to make real-asset participation accessible by lowering entry barriers while ensuring transparency, strong corporate backing, and solid risk management.
+        </p>
+        <a href="#contact" class="btn btn-gold">Talk To Our Team →</a>
+      </div>
+      <div class="big-number">
+        <strong>₹10K</strong>
+        <span>Minimum investment*</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sectors" style="background:#051321; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">FUTURE SECTORS</div>
+      <h2>Where We Invest & Build</h2>
+      <p>Our roadmap expands across seven key pillars designed to deliver long-term value, recurring potential yield, and real-asset ownership.</p>
+    </div>
+
+    <div class="sectors-grid">
+      <div class="sector-card" 
+           onclick="document.getElementById('solar-opportunity').scrollIntoView({ behavior: 'smooth' });" 
+           style="cursor: pointer; background-image: linear-gradient(180deg, rgba(5, 19, 33, 0.35) 0%, rgba(5, 19, 33, 0.65) 100%), url('solar.jpg');">
+        <span class="sector-status status-active">ACTIVE COLLABORATION</span>
+        <div class="sector-icon">☀️</div>
+        <h3>Solar & Renewable Energy</h3>
+        <p>Clean energy infrastructure generating predictable monthly lease returns. Partnered with established groups like Kapil Group.</p>
+        <div class="kapil-badge"><img src="kapil-logo.png" alt="Kapil Group"></div>
+      </div>
+
+      <div class="sector-card" 
+           onclick="document.getElementById('palm-opportunity').scrollIntoView({ behavior: 'smooth' });" 
+           style="cursor: pointer; background-image: linear-gradient(180deg, rgba(5, 19, 33, 0.35) 0%, rgba(5, 19, 33, 0.65) 100%), url('agriculture.jpg');">
+        <span class="sector-status status-active">ACTIVE PROJECTS</span>
+        <div class="sector-icon">🌴</div>
+        <h3>Agriculture & Plantation</h3>
+        <p>Direct participation in fertile land assets, palm oil plantations, and commercial agriculture with land appreciation.</p>
+      </div>
+
+      <div class="sector-card" style="background-image: linear-gradient(180deg, rgba(5, 19, 33, 0.35) 0%, rgba(5, 19, 33, 0.65) 100%), url('real-estate.jpg');">
+        <span class="sector-status status-expansion">UPCOMING SECTOR</span>
+        <div class="sector-icon">🏢</div>
+        <h3>Real Estate</h3>
+        <p>Fractional ownership in high-yield commercial spaces and strategically located land parcels.</p>
+      </div>
+
+      <div class="sector-card" style="background-image: linear-gradient(180deg, rgba(5, 19, 33, 0.35) 0%, rgba(5, 19, 33, 0.65) 100%), url('education.jpg');">
+        <span class="sector-status status-expansion">UPCOMING SECTOR</span>
+        <div class="sector-icon">🎓</div>
+        <h3>Education</h3>
+        <p>Investing in institutional infrastructure and educational facility assets with steady rental backings.</p>
+      </div>
+
+      <div class="sector-card" style="background-image: linear-gradient(180deg, rgba(5, 19, 33, 0.35) 0%, rgba(5, 19, 33, 0.65) 100%), url('technology.jpg');">
+        <span class="sector-status status-expansion">UPCOMING SECTOR</span>
+        <div class="sector-icon">💻</div>
+        <h3>Technology</h3>
+        <p>Proprietary platforms, asset-tracking tech, and smart infrastructure supporting our physical portfolio.</p>
+      </div>
+
+      <div class="sector-card" style="background-image: linear-gradient(180deg, rgba(5, 19, 33, 0.35) 0%, rgba(5, 19, 33, 0.65) 100%), url('hospitality.jpg');">
+        <span class="sector-status status-expansion">UPCOMING SECTOR</span>
+        <div class="sector-icon">🏨</div>
+        <h3>Hospitality & Strategic Investments</h3>
+        <p>Boutique eco-resorts, leisure assets, and strategic venture equity across emerging high-growth industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="investments" class="opps">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">OUR OPPORTUNITIES</div>
+      <h2>Tangible Assets. Potential Income. Long-Term Value.</h2>
+      <p>Explore our active and upcoming asset investment opportunities.</p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card" id="solar-opportunity">
+        <div class="card-img solar">
+          <span class="badge">CURRENT OPPORTUNITY</span>
+          <span class="partner-tag">In Collaboration with Kapil Group</span>
+        </div>
+        <div class="card-body">
+          <h3>Solar Farm</h3>
+          <p><b>2.2 MW Solar Farm · Panel Leasing Model</b></p>
+          <p>
+            Developed in strategic collaboration with <b>Kapil Group</b>. An opportunity associated with a panel-leasing structure in a 2.2 MW operational solar farm. Expected returns are in the range of <b>1%–1.5% per month</b>.
+          </p>
+          <div class="features">
+            <div class="feature"><b>2.2 MW</b><span>Solar Power Plant</span></div>
+            <div class="feature"><b>1%–1.5%</b><span>Expected monthly return*</span></div>
+            <div class="feature"><b>Kapil Group</b><span>Strategic Partner</span></div>
+            <div class="feature"><b>₹10,000</b><span>Starting investment*</span></div>
+          </div>
+          <a href="#contact" class="btn btn-gold">Request Details →</a>
+          <div class="disclaimer">*Expected figures are illustrative and subject to project documents, terms and conditions. Returns are not a guarantee unless expressly documented.</div>
+        </div>
+      </article>
+
+      <article class="card" id="palm-opportunity">
+        <div class="card-img palm">
+          <span class="badge">UPCOMING OPPORTUNITY</span>
+        </div>
+        <div class="card-body">
+          <h3>Palm Farm</h3>
+          <p><b>Own a piece of agricultural land from ₹10,000*</b></p>
+          <p>
+            An upcoming palm-farm opportunity designed around land ownership participation, potential quarterly income, and asset appreciation over time.
+          </p>
+          <div class="features">
+            <div class="feature"><b>From ₹10K*</b><span>Entry point</span></div>
+            <div class="feature"><b>Quarterly</b><span>Potential income*</span></div>
+            <div class="feature"><b>Land</b><span>Ownership structure*</span></div>
+            <div class="feature"><b>Buyback</b><span>Subject to agreed terms*</span></div>
+          </div>
+          <a href="#contact" class="btn btn-gold">Register Interest →</a>
+          <div class="disclaimer">*Ownership, returns, appreciation and buyback are subject to the final legal structure, agreements and applicable terms.</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">WHY BHOOMANI</div>
+      <h2>A Clearer Way To Explore Real Assets.</h2>
+      <p>We want every investor to understand the opportunity before making a decision.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why"><div class="icon">◈</div><h3>Accessible</h3><p>Lower entry points designed to broaden access to selected opportunities.</p></div>
+      <div class="why"><div class="icon">◇</div><h3>Asset Focused</h3><p>Opportunities centered around tangible assets and operating projects.</p></div>
+      <div class="why"><div class="icon">✓</div><h3>Strong Alliances</h3><p>Collaborations with trustworthy industry leaders like Kapil Group.</p></div>
+      <div class="why"><div class="icon">↗</div><h3>Diversified</h3><p>Multi-sector footprint spanning solar, agri, real estate, and tech.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">HOW IT WORKS</div>
+      <h2>From Interest To Informed Decision.</h2>
+      <p>Our team will guide you through the opportunity and its documentation.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Register Interest</h3><p>Share your name, contact details and opportunity of interest.</p></div>
+      <div class="step"><div class="num">02</div><h3>Understand</h3><p>Review project information, structure, risks and applicable terms.</p></div>
+      <div class="step"><div class="num">03</div><h3>Review Documents</h3><p>Complete the required checks and documentation.</p></div>
+      <div class="step"><div class="num">04</div><h3>Participate</h3><p>Proceed only after you are comfortable with the documented terms.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="kicker">READY TO EXPLORE?</div>
+  <h2>Be Among The First To Know.</h2>
+  <p>
+    Register your interest and our team will contact you with the relevant
+    opportunity details and next steps.
+  </p>
+  <a class="btn btn-gold" href="#contact">Register Your Interest →</a>
+</div>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <div class="kicker">LET'S CONNECT</div>
+        <h2>Start A Conversation.</h2>
+        <p>
+          Have questions about an opportunity? Leave your details and our team
+          will get in touch.
+        </p>
+        <div class="contact-details">
+          <div>
+            <b><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>PHONE / WHATSAPP</b>
+            +91 7036280364
+          </div>
+          <div>
+            <b><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg>EMAIL</b>
+            Raghuvind@bhoomaniholdings.com
+          </div>
+          <div>
+            <b><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v18"/><path d="M2 22h20"/><path d="M9 8h1"/><path d="M14 8h1"/><path d="M9 12h1"/><path d="M14 12h1"/><path d="M9 16h1"/><path d="M14 16h1"/></svg>REGISTERED ADDRESS</b>
+            <a href="https://www.google.com/maps/search/?api=1&query=1-21%2C+Mudhigonda%2C+Nekkonda%2C+Warangal%2C+Telangana+%E2%80%93+506122" target="_blank" rel="noopener" class="location-link">1-21, Mudhigonda, Nekkonda, Warangal, Telangana – 506122</a>
+          </div>
+          <div>
+            <b><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>OPERATED ADDRESS</b>
+            <a href="https://www.google.com/maps/search/?api=1&query=Plot+60%2C+Rolling+Meadows%2C+NARNE+Estates%2C+Spring+Valley+Road%2C+Serilingampally%2C+Hyderabad%2C+Telangana+%E2%80%93+500084" target="_blank" rel="noopener" class="location-link">Plot 60, Rolling Meadows, NARNE Estates, Spring Valley Road, Serilingampally, Hyderabad, Telangana – 500084</a>
+          </div>
+        </div>
+        <a class="btn btn-outline" href="https://wa.me/917036280364?text=Hello%20Bhoomani%20Holdings%2C%20I%20would%20like%20to%20know%20more%20about%20your%20investment%20opportunities." target="_blank">WhatsApp Us →</a>
+      </div>
+
+      <form class="form" onsubmit="submitForm(event)">
+        <input id="name" type="text" placeholder="Full Name" required>
+        <input id="phone" type="tel" placeholder="Mobile Number" required>
+        <input id="email" type="email" placeholder="Email Address" required>
+        <select id="interest" required>
+          <option value="">I'm interested in...</option>
+          <option>Solar Farm (Kapil Group Collab)</option>
+          <option>Palm Farm</option>
+          <option>Both</option>
+          <option>Future Sectors (Real Estate, Education, Tech, etc.)</option>
+        </select>
+        <textarea id="message" placeholder="Your message (optional)"></textarea>
+        <small>By submitting, you are requesting information only. This form does not constitute an investment commitment.</small>
+        <button class="btn btn-gold" type="submit">Register Interest →</button>
+        <div id="success" style="display:none;margin-top:12px;color:#f1c76a;font-size:13px">
+          Thank you. Your interest has been recorded on this demo page.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="brand">
+        <img src="logo.png" alt="Bhoomani Holdings Logo" style="width:50px !important; height:50px !important; max-width:50px !important; max-height:50px !important; object-fit:contain !important; display:block !important;">
+        <div><strong>BHOOMANI HOLDINGS PRIVATE LIMITED</strong><span>Collective Growth. Secure Future.</span></div>
+      </div>
+    </div>
+    <p>© 2026 Bhoomani Holdings Pvt. Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/917036280364?text=Hello%20Bhoomani%20Holdings%2C%20I%20would%20like%20to%20know%20more%20about%20your%20investment%20opportunities." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+    <path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.34.646 4.53 1.77 6.406L4 29l7.79-1.734A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.75a9.7 9.7 0 0 1-4.94-1.353l-.354-.21-4.62 1.028 1.006-4.5-.232-.368A9.71 9.71 0 0 1 5.25 15c0-5.93 4.823-10.75 10.754-10.75S26.75 9.07 26.75 15 21.935 24.75 16.004 24.75Zm5.55-7.36c-.303-.152-1.792-.884-2.07-.986-.278-.101-.48-.152-.683.152-.202.303-.784.986-.96 1.19-.177.202-.354.227-.657.075-.303-.152-1.28-.472-2.438-1.505-.902-.804-1.51-1.798-1.687-2.101-.177-.303-.019-.467.133-.618.137-.136.303-.354.454-.53.152-.177.202-.303.303-.505.101-.202.05-.379-.025-.53-.076-.152-.683-1.646-.937-2.254-.247-.593-.498-.512-.683-.522-.177-.008-.379-.01-.581-.01-.202 0-.53.076-.808.379-.278.303-1.06 1.036-1.06 2.53 0 1.494 1.086 2.938 1.237 3.14.152.202 2.138 3.264 5.181 4.577.724.313 1.288.5 1.729.64.726.23 1.387.198 1.909.12.582-.087 1.792-.733 2.045-1.44.253-.708.253-1.315.177-1.44-.076-.126-.278-.202-.581-.354Z"/>
+  </svg>
+</a>
+
+<script>
+function submitForm(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const phone=document.getElementById('phone').value;
+  const email=document.getElementById('email').value;
+  const interest=document.getElementById('interest').value;
+  const message=document.getElementById('message').value;
+
+  const text =
+    "Hello Bhoomani Holdings,%0A%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "Mobile: " + encodeURIComponent(phone) + "%0A" +
+    "Email: " + encodeURIComponent(email) + "%0A" +
+    "Interest: " + encodeURIComponent(interest) + "%0A" +
+    "Message: " + encodeURIComponent(message);
+
+  window.open("https://wa.me/917036280364?text=" + text, "_blank");
+  document.getElementById('success').style.display='block';
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector("nav");
+
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", function () {
+      nav.classList.toggle("mobile-open");
+    });
+  }
+
+  // Close the mobile menu whenever a nav link is tapped
+  const navLinks = document.querySelectorAll(".links a");
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("mobile-open");
+    });
+  });
+});
+</script>
+
+</body>
+</html>
